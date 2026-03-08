@@ -9,7 +9,7 @@ export default function CustomNavbar() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappText}`
 
   return (
-    <Navbar bg="white" sticky="top" className="shadow-sm py-3">
+    <Navbar sticky="top" className="shadow-sm py-3 navbar">
       <Container className="d-flex justify-content-between align-items-center">
         <Navbar.Brand href="#home" className="d-flex align-items-center gap-2 m-0">
           <img src={logo} alt="Rate Labs logo" className="navbar-logo" />

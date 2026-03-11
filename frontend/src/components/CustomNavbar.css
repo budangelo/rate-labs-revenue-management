@@ -38,7 +38,7 @@ border: 1px solid rgba(255, 255, 255, 0.06);
   height: 52px;
   border: 0;
   background: transparent;
-  color: #111111;
+  color: #b7ff00;;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,7 @@ border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .floating-nav-action:hover {
-  color: #111111;
+  color: #73a000;;
   opacity: 0.8;
 }
 
@@ -118,8 +118,7 @@ border: 1px solid rgba(255, 255, 255, 0.06);
   min-height: 340px;
   border-radius: 20px;
   padding: 28px 22px 24px;
-  background: #f4efe7;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+  background: #242424;
   z-index: 1060;
 
   opacity: 0;
@@ -156,12 +155,12 @@ border: 1px solid rgba(255, 255, 255, 0.06);
   font-size: clamp(1.8rem, 5.4vw, 3.4rem);
   line-height: 0.95;
   font-weight: 800;
-  color: #1e140c;
+  color: #ffffffa6;
   padding: 4px 0;
 }
 
 .center-menu-nav .nav-link:hover {
-  color: #f36b00;
+  color: #b7ff00;
 }
 
 @media (max-width: 576px) {

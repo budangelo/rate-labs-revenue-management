@@ -101,12 +101,12 @@ useEffect(() => {
         Perché scegliere Rate Labs
       </h2>
 
-      <p className={`why-subtitle mb-0 reveal-up delay-1 ${whyVisible ? "is-visible" : ""}`}>
+      <p className={`why-subtitle mb-4 reveal-up delay-1 ${whyVisible ? "is-visible" : ""}`}>
         Soluzioni semplici, dati chiari e una strategia pensata per far crescere i tuoi risultati.
       </p>
     </div>
 
-    <Row className="g-2 justify-content-center">
+    <Row className="g-2 mt-4 justify-content-center">
       <Col md={6} lg={4}>
         <article className={`why-hover-card reveal-up delay-2 ${whyVisible ? "is-visible" : ""}`}>
           <img
@@ -284,7 +284,7 @@ useEffect(() => {
           <h3 className="contact-form-title">Prenota una chiamata</h3>
 
           <Form>
-            <Row className="g-3">
+            <Row className="g-3 custom-input-form">
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Nome</Form.Label>

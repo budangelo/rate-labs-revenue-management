@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Navbar, Container, Nav } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa"
-import logo from "../assets/ratelabs-icon-navbar2.png"
+import logo from "/public/Logo-Rate-Labs.png"
 import "./CustomNavbar.css"
 
 export default function CustomNavbar() {
@@ -29,9 +30,9 @@ export default function CustomNavbar() {
               <FaWhatsapp />
             </a>
 
-            <a href="#home" className="floating-brand" aria-label="Rate Labs home">
+            <Link to="/" className="floating-brand" aria-label="Rate Labs home" onClick={handleClose}>
               <img src={logo} alt="Rate Labs logo" className="floating-logo" />
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -63,10 +64,11 @@ export default function CustomNavbar() {
         </button>
 
         <Nav className="flex-column center-menu-nav">
-          <Nav.Link href="#home" onClick={handleClose}>Home</Nav.Link>
-          <Nav.Link href="#about" onClick={handleClose}>About Us</Nav.Link>
-          <Nav.Link href="#services" onClick={handleClose}>Services</Nav.Link>
-          <Nav.Link href="#contact" onClick={handleClose}>Contact</Nav.Link>
+          <Nav.Link as={Link} to="/" onClick={handleClose}>Home</Nav.Link>
+          <Nav.Link as={Link} to="/#about" onClick={handleClose}>About Us</Nav.Link>
+          <Nav.Link as={Link} to="/#services" onClick={handleClose}>Method</Nav.Link>
+          <Nav.Link as={Link} to="/#contact" onClick={handleClose}>Contact</Nav.Link>
+          <Nav.Link as={Link} to="/authors" onClick={handleClose}>Authors</Nav.Link>
         </Nav>
       </aside>
     </>

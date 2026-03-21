@@ -1,39 +1,80 @@
+import { useState } from "react"
 import { Container, Row, Col, Nav } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import "./CustomFooter.css"
 
 export default function CustomFooter() {
+  const [isDeveloperCardOpen, setIsDeveloperCardOpen] = useState(false)
+  const founderLinkedIn = "https://www.linkedin.com/in/INSERISCI-LINK-BRIAN"
+  const developerLinkedIn = "https://www.linkedin.com/in/INSERISCI-TUO-LINKEDIN"
+  const developerEmail = "tuamail@example.com"
+
   return (
     <footer className="site-footer">
       <Container>
-        <Row className="footer-top">
-          <Col lg={4} md={6} className="mb-4 mb-lg-0">
-            <div className="footer-heading">Servizi</div>
-            <Nav className="footer-links flex-column">
-              <Nav.Link href="#services">Revenue Management</Nav.Link>
-              <Nav.Link href="#news">News & Insight</Nav.Link>
-              <Nav.Link href="#about">Chi siamo</Nav.Link>
-              <Nav.Link href="#contact">Prenota una chiamata</Nav.Link>
-            </Nav>
-          </Col>
-
-          <Col lg={4} md={6} className="mb-4 mb-lg-0">
-            <div className="footer-heading">Rate Labs</div>
-            <Nav className="footer-links flex-column">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About Us</Nav.Link>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-            </Nav>
-          </Col>
-
-          <Col lg={4}>
+        <Row className="footer-top justify-content-between align-items-start align-items-lg-end g-4">
+          <Col lg={6}>
             <div className="footer-heading">Informazioni</div>
+
             <Nav className="footer-links flex-column">
-              <Nav.Link href="#newsletter">Newsletter</Nav.Link>
-              <Nav.Link href="#contact">Supporto</Nav.Link>
-              <Nav.Link href="#contact">Consulenza</Nav.Link>
-              <Nav.Link href="#contact">Disponibilità</Nav.Link>
+              <Nav.Link as={Link} to="/privacy">
+                Privacy
+              </Nav.Link>
+
+              <Nav.Link href={founderLinkedIn} target="_blank" rel="noreferrer">
+                Founder
+              </Nav.Link>
+
+              <Nav.Link as={Link} to="/#contact">
+                Prenota una chiamata
+              </Nav.Link>
             </Nav>
+          </Col>
+
+          <Col lg={5} className="footer-dev-col">
+            <div
+              className={`footer-dev-card ${isDeveloperCardOpen ? "is-open" : ""}`}
+              onClick={() => setIsDeveloperCardOpen((prev) => !prev)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault()
+                  setIsDeveloperCardOpen((prev) => !prev)
+                }
+              }}
+            >
+              <div className="footer-dev-top">
+                <div>
+                  <span className="footer-dev-badge">Design & sviluppo web</span>
+                  <h4 className="footer-dev-name">Angelo Buda</h4>
+                </div>
+          
+                <span className={`footer-dev-plus ${isDeveloperCardOpen ? "is-open" : ""}`}>
+                  +
+                </span>
+              </div>
+          
+              <div className={`footer-dev-details ${isDeveloperCardOpen ? "is-open" : ""}`}>
+                <a
+                  href={developerLinkedIn}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="footer-dev-link"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  LinkedIn
+                </a>
+          
+                <a
+                  href={`mailto:${developerEmail}`}
+                  className="footer-dev-link"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  {developerEmail}
+                </a>
+              </div>
+            </div>
           </Col>
         </Row>
 
@@ -46,9 +87,18 @@ export default function CustomFooter() {
         </div>
 
         <div className="footer-brand-wrap">
-          <div className="footer-brand">Rate Labs</div>
+          <img
+            src="/Logo-Rate-Labs.png"
+            alt="Rate Labs logo"
+            className="footer-brand-logo"
+          />
+
           <p className="footer-copy">
             © 2026, Rate Labs. Tutti i diritti riservati.
+          </p>
+
+          <p className="footer-vat">
+            P.IVA: 12922040014
           </p>
         </div>
       </Container>

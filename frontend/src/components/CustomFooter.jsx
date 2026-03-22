@@ -5,9 +5,9 @@ import "./CustomFooter.css"
 
 export default function CustomFooter() {
   const [isDeveloperCardOpen, setIsDeveloperCardOpen] = useState(false)
-  const founderLinkedIn = "https://www.linkedin.com/in/INSERISCI-LINK-BRIAN"
-  const developerLinkedIn = "https://www.linkedin.com/in/INSERISCI-TUO-LINKEDIN"
-  const developerEmail = "tuamail@example.com"
+  const founderLinkedIn = "https://www.linkedin.com/in/brian-bourlot-639b06253"
+  const developerLinkedIn = "https://www.linkedin.com/in/angelo-buda"
+  const developerEmail = "budaangelo@gmail.com"
 
   return (
     <footer className="site-footer">
@@ -15,22 +15,18 @@ export default function CustomFooter() {
         <Row className="footer-top justify-content-between align-items-start align-items-lg-end g-4">
           <Col lg={6}>
             <div className="footer-heading">Informazioni</div>
-
             <Nav className="footer-links flex-column">
               <Nav.Link as={Link} to="/privacy">
                 Privacy
               </Nav.Link>
-
               <Nav.Link href={founderLinkedIn} target="_blank" rel="noreferrer">
                 Founder
               </Nav.Link>
-
               <Nav.Link as={Link} to="/#contact">
                 Prenota una chiamata
               </Nav.Link>
             </Nav>
           </Col>
-
           <Col lg={5} className="footer-dev-col">
             <div
               className={`footer-dev-card ${isDeveloperCardOpen ? "is-open" : ""}`}
@@ -77,26 +73,21 @@ export default function CustomFooter() {
             </div>
           </Col>
         </Row>
-
         <div className="footer-divider"></div>
-
         <div className="footer-middle">
           <span className="footer-tagline">Strategia</span>
           <span className="footer-tagline">Crescita</span>
           <span className="footer-tagline">Risultati</span>
         </div>
-
         <div className="footer-brand-wrap">
           <img
-            src="/Logo-Rate-Labs.png"
+            src={`${import.meta.env.BASE_URL}Logo-Rate-Labs.png`}
             alt="Rate Labs logo"
             className="footer-brand-logo"
           />
-
           <p className="footer-copy">
             © 2026, Rate Labs. Tutti i diritti riservati.
           </p>
-
           <p className="footer-vat">
             P.IVA: 12922040014
           </p>

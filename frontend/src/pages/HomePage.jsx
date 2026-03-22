@@ -1,5 +1,4 @@
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap"
-{/*----------------------  IMAGES  ------------------*/}
+import { Container, Row, Col, Button, Form } from "react-bootstrap"
 import marketAnalysis from "../assets/pexels-arina-krasnikova-5951751.jpg"
 import priceOptimization from "../assets/pexels-darshan394-2695392.jpg"
 import strategicSupport from "../assets/goran-ivos-iY9g8EcikeY-unsplash.jpg"
@@ -7,13 +6,10 @@ import aboutImage from "../assets/bg-about-us.jpg"
 import newsletterImage from "../assets/mehdi-shiri--XdV3YSGHLw-unsplash.jpg"
 import newsImage1 from "../assets/markus-winkler-IrRbSND5EUc-unsplash.jpg"
 import imagebgform from "../assets/sole-d-alessandro-g-srxicXz3cxU-unsplash.jpg"
-{/*----------------------  IMAGES  ------------------*/}
 import { useEffect, useRef, useState } from "react"
 
-
-
 export default function HomePage() {
-  {/*----------------------  CARDS   ------------------*/}
+  //----------------------  CARDS   ------------------
   const whySectionRef = useRef(null)
   const [whyVisible, setWhyVisible] = useState(false)
   useEffect(() => {
@@ -36,7 +32,7 @@ export default function HomePage() {
       }
     }
   }, [])
-  {/*----------------------  NEWS SECTION  ------------------*/}
+  //----------------------  NEWS SECTION  ------------------
   const newsItems = [
     { id: 1, image: newsImage1, title: "Il mito del prezzo fisso: Perché stai perdendo prenotazioni dirette", text: "Mantenere listini prezzi statici o basati solo sull'alta/bassa stagione è il modo più rapido per regalare margini ai tuoi competitor. Il mercato di oggi è fluido: la domanda cambia per eventi, meteo e trend di volo. Un approccio di Dynamic Pricing ti permette di alzare le tariffe quando la domanda è in picco e di stimolare l'occupazione quando è piatta. Non vendere mai una camera a 100€ se il mercato è disposto a pagarne 150€. È tempo di far lavorare i prezzi per te, non viceversa." },
     { id: 2, image: newsImage1, title: "Disintermediazione strategica: Meno commissioni, più margine", text: "Le OTA (Booking, Expedia) sono vetrine eccellenti, ma non possono essere la tua unica fonte di fatturato. Un hotel indipendente sano deve mirare a un equilibrio. Il Revenue Management non è solo 'cambiare i prezzi', ma ottimizzare i canali di distribuzione. Attraverso tariffe opache, pacchetti esclusivi sul sito web e politiche di cancellazione mirate, puoi spostare gradualmente le prenotazioni sul tuo canale diretto, aumentando il margine netto (RevPAR) di ogni singola camera venduta." },
@@ -51,7 +47,6 @@ export default function HomePage() {
     { id: 11, image: newsImage1, title: "Overbooking calcolato: Rischio o mossa vincente?", text: "La parola 'overbooking' terrorizza molti albergatori indipendenti, evocando clienti arrabbiati alla reception. Tuttavia, analizzando statisticamente il tasso di No-Show e le cancellazioni storiche, un overbooking matematicamente calcolato è una delle strategie più potenti per garantire il 100% di occupazione reale. Con i giusti dati e piani di riprotezione, si trasforma da un incubo logistico a una pura ottimizzazione del fatturato." },
     { id: 12, image: newsImage1, title: "Il costo del mancato Revenue: Cosa stai sacrificando?", text: "Molti hotel indipendenti vedono il Revenue Management come un 'costo extra' o una cosa da grandi catene alberghiere. La realtà è che il vero costo è il potenziale inespresso: le camere vendute sottocosto e quelle rimaste vuote. L'adozione di pratiche di Revenue Management, supportate dalla tecnologia e dalle competenze giuste, si ripaga da sola in pochi mesi. Il tuo hotel ha un potenziale nascosto; è ora di sbloccarlo." }
   ]
-  
   const truncateWords = (text, limit = 20) => {
     const words = text.trim().split(/\s+/)
     return words.length <= limit ? text : `${words.slice(0, limit).join(" ")}...`
@@ -63,9 +58,7 @@ export default function HomePage() {
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [activeMobileNewsIndex, setActiveMobileNewsIndex] = useState(0)
   const [isMobileNewsExpanded, setIsMobileNewsExpanded] = useState(false)
-  
   const activeMobileNews = newsItems[activeMobileNewsIndex]
-  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -75,18 +68,15 @@ export default function HomePage() {
       },
       { threshold: 0.2 }
     )
-  
     if (newsletterRef.current) {
       observer.observe(newsletterRef.current)
     }
-  
     return () => {
       if (newsletterRef.current) {
         observer.unobserve(newsletterRef.current)
       }
     }
   }, [])
-  
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 576px)")
   
@@ -114,7 +104,6 @@ export default function HomePage() {
       }
     }
   }, [])
-  
   useEffect(() => {
     if (!isMobileViewport || isMobileNewsExpanded) return
   
@@ -124,7 +113,6 @@ export default function HomePage() {
   
     return () => window.clearInterval(intervalId)
   }, [isMobileViewport, isMobileNewsExpanded])
-  
   useEffect(() => {
     if (!isMobileNewsExpanded) return
   
@@ -151,7 +139,6 @@ export default function HomePage() {
                   <h1 className="hero-title hero-fade-in">
                     Aumenta il fatturato del tuo hotel indipendente con il Pricing Dinamico
                   </h1>
-        
                   <p className="hero-text hero-slide-left">
                     Strategie di Revenue Management su misura per proteggere il tuo margine. Metti alla prova il tuo hotel: fai scansionare il tuo posizionamento dalla nostra IA e ricevi il report gratuito.
                   </p>
@@ -178,12 +165,10 @@ export default function HomePage() {
             <h2 className={`why-title reveal-up ${whyVisible ? "is-visible" : ""}`}>
               Il Metodo Rate Labs
             </h2>
-      
             <p className={`why-subtitle mb-4 reveal-up delay-1 ${whyVisible ? "is-visible" : ""}`}>
               Dati complessi trasformati in azioni semplici. Un approccio per massimizzare l'occupazione e il prezzo medio, tutelando e ottimizzando il margine reale del tuo hotel.
             </p>
           </div>
-      
           <Row className="g-2 mt-4 justify-content-center">
             <Col md={6} lg={4}>
               <article className={`why-hover-card reveal-up delay-2 ${whyVisible ? "is-visible" : ""}`}>
@@ -203,7 +188,6 @@ export default function HomePage() {
                 </div>
               </article>
             </Col>
-      
             <Col md={6} lg={4}>
               <article className={`why-hover-card reveal-up delay-3 ${whyVisible ? "is-visible" : ""}`}>
                 <img
@@ -260,7 +244,6 @@ export default function HomePage() {
                 Strategia, dati e visione per valorizzare ogni struttura.
               </h2>
             </div>
-      
             <div className="about-band-right">
               <p className="about-band-text">
                 Rate Labs nasce con l’obiettivo di aiutare hotel indipendenti e
@@ -391,11 +374,9 @@ export default function HomePage() {
                   <Col lg={7}  className="order-2 order-lg-1">
                     <div className="newsletter-content h-100">
                       <h3 className="newsletter-title">Strategie di Revenue per la TUA città.</h3>
-      
                       <p className="newsletter-text">
                         Il mercato cambia da Milano a Palermo. Iscriviti per ricevere insight, prezzi e consigli operativi calibrati solo sulle dinamiche del tuo territorio.
                       </p>
-      
                       <Form>
                         <Row className="g-3 d-flex justify-content-center">
                           <Col md={8}>
@@ -414,7 +395,6 @@ export default function HomePage() {
                       </Form>
                     </div>
                   </Col>
-      
                   <Col lg={5} className="order-1 order-lg-2">
                     <div className="newsletter-image-wrapper">
                       <img
@@ -431,46 +411,41 @@ export default function HomePage() {
         </Container>
       </section>
     {/*----------------------  CONTACT FORM ------------------*/}
-<section id="contact" className="contact-form-section py-5">
-  <Container>
-    <Row className="justify-content-center">
-      <Col lg={9} xl={8}>
-        <div
-          className="contact-form-card"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${imagebgform})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat"
-          }}
-        >
-          <h3 className="contact-form-title">Quanto Vale un Quarto d'Ora per il Tuo Hotel?</h3>
-          <p className="newsletter-text">
-            15 minuti di orologio. Analizziamo al volo la tua situazione attuale e ti indico subito dove stai perdendo marginalità e prenotazioni dirette. Nessun impegno, solo numeri e azioni pratiche. Scegli il tuo orario.
-          </p>
-
-          <Form>
-            <Row className="g-3 custom-input-form">
-              <Col xs={12}>
+      <section id="contact" className="contact-form-section py-5">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={9} xl={8}>
+              <div
+                className="contact-form-card"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${imagebgform})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat"
+                }}
+              >
+                <h3 className="contact-form-title">Quanto Vale un Quarto d'Ora per il Tuo Hotel?</h3>
+                <p className="newsletter-text">
+                  15 minuti di orologio. Analizziamo al volo la tua situazione attuale e ti indico subito dove stai perdendo marginalità e prenotazioni dirette. Nessun impegno, solo numeri e azioni pratiche. Scegli il tuo orario.
+                </p>
+              <div className="contact-cta-wrap">
                 <Button
                   type="button"
-                  className="contact-submit-btn w-100"
+                  className="contact-submit-btn"
                   onClick={() =>
                     window.Calendly?.initPopupWidget({
                       url: "https://calendly.com/ratelab-it/30min"
                     })
                   }
                 >
-                  Invia richiesta
+                  Prenota una call gratuita
                 </Button>
-              </Col>
-            </Row>
-          </Form>
-        </div>
-      </Col>
-    </Row>
-  </Container>
-</section>
+              </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   )
 }

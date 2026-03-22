@@ -892,6 +892,16 @@ body {
   color: #ffffff !important;
 }
 
+.contact-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  max-width: 320px;
+}
+
 @media (max-width: 576px) {
   .contact-form-section {
     padding-top: 70px !important;

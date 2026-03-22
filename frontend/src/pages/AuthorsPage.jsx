@@ -24,40 +24,40 @@ export default function AuthorsPage() {
       author: "Goran Ivos",
       source: "Unsplash",
     },
-        {
+    {
       id: 3,
       image: hotelImage3,
       imageTitle: "Hero",
       author: "Takashi Sakamoto",
       source: "Unsplash",
     },
-        {
+    {
       id: 4,
       image: hotelImage4,
       imageTitle: "Form",
-      author: "Sole d'alessandro",
+      author: "Sole d'Alessandro",
       source: "Unsplash",
     },
-            {
+    {
       id: 5,
       image: hotelImage5,
       imageTitle: "Method",
       author: "Darshan",
       source: "Pexels",
     },
-            {
+    {
       id: 6,
       image: hotelImage6,
       imageTitle: "Method",
       author: "Arina Krasnikova",
       source: "Pexels",
     },
-          {
+    {
       id: 7,
       image: hotelImage7,
       imageTitle: "About Us",
       author: "Lucjano Kuci",
-      source: "Pexels",
+      source: "Unsplash",
     },
   ]
 
@@ -70,7 +70,6 @@ export default function AuthorsPage() {
             Crediti delle immagini utilizzate nel sito.
           </p>
         </div>
-
         <Row className="gy-4">
           {authorsItems.map((item) => (
             <Col md={6} key={item.id}>
@@ -80,7 +79,6 @@ export default function AuthorsPage() {
                   alt={item.imageTitle}
                   className="authors-page-image"
                 />
-
                 <div className="authors-page-info">
                   <h3 className="authors-image-title">{item.imageTitle}</h3>
                   <p className="authors-image-author">Autore: {item.author}</p>

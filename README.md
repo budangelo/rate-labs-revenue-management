@@ -1,16 +1,73 @@
-# React + Vite
+# Rate Labs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rate Labs is a modern landing page built for a revenue management service focused on independent hotels and hospitality properties.  
+The project was designed to communicate professionalism, clarity, and conversion through a clean visual structure, strong messaging, and focused calls to action.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was developed as a real-world frontend case study using React and Vite.  
+It presents Rate Labs as a strategic partner for hotel owners who want to improve pricing decisions, direct bookings, and overall revenue performance.
 
-## React Compiler
+The website is built as a one-page experience with additional supporting pages, combining strong visual hierarchy, responsive design, and practical third-party integrations.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Live Demo
 
-## Expanding the ESLint configuration
+Add your live URL here:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`https://ratelabs.com`
+
+## Project Goals
+
+- Build a polished and conversion-oriented landing page
+- Present a clear value proposition for a hospitality-focused service
+- Create a responsive frontend with a clean structure and maintainable code
+- Integrate external tools for lead generation and call booking
+- Deliver a portfolio-ready frontend project based on a realistic client scenario
+
+## Main Features
+
+- Responsive one-page landing page
+- Floating navigation with mobile menu
+- Hero section with call-to-action
+- Service presentation cards
+- About section
+- Interactive news/revenue insights section
+- Newsletter call-to-action connected to Tally
+- Contact / call booking section connected to Calendly
+- Dedicated authors page for image credits
+- Custom footer with expandable developer signature area
+- GitHub Pages deployment support
+
+## Tech Stack
+
+- React
+- JavaScript
+- Vite
+- React Bootstrap
+- Bootstrap
+- React Router
+- CSS custom styling
+- React Icons
+
+## Third-Party Integrations
+
+- Tally for lead capture and newsletter forms
+- Calendly for call scheduling
+
+## Project Structure
+
+```bash
+src/
+  assets/
+  components/
+    CustomNavbar.jsx
+    CustomFooter.jsx
+  pages/
+    HomePage.jsx
+    AuthorsPage.jsx
+  styles/
+    CustomNavbar.css
+    CustomFooter.css
+    AuthorPage.css
+  App.jsx
+  main.jsx

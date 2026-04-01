@@ -6,7 +6,7 @@ import hotelImage4 from "../assets/sole-d-alessandro-g-srxicXz3cxU-unsplash.jpg"
 import hotelImage5 from "../assets/pexels-darshan394-2695392.jpg"
 import hotelImage6 from "../assets/pexels-arina-krasnikova-5951751.jpg"
 import hotelImage7 from "../assets/lucjano-kuci-ldJsES6F5d4-unsplash.jpg"
-import "../styles/AuthorPage.css"
+import "./AuthorPage.css"
 
 export default function AuthorsPage() {
   const authorsItems = [

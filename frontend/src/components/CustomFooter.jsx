@@ -16,8 +16,20 @@ export default function CustomFooter() {
           <Col lg={6}>
             <div className="footer-heading">Informazioni</div>
             <Nav className="footer-links flex-column">
-              <Nav.Link as={Link} to="/privacy">
-                Privacy
+              <Nav.Link
+                href="https://www.iubenda.com/privacy-policy/27092949"
+                className="iubenda-noiframe iubenda-embed footer-policy-link"
+                title="Privacy Policy"
+              >
+                Privacy Policy
+              </Nav.Link>
+              
+              <Nav.Link
+                href="https://www.iubenda.com/privacy-policy/27092949/cookie-policy"
+                className="iubenda-noiframe iubenda-embed footer-policy-link"
+                title="Cookie Policy"
+              >
+                Cookie Policy
               </Nav.Link>
               <Nav.Link href={founderLinkedIn} target="_blank" rel="noreferrer">
                 Founder

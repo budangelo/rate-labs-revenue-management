@@ -4,7 +4,6 @@ import CustomNavbar from "./components/CustomNavbar.jsx"
 import CustomFooter from "./components/CustomFooter.jsx"
 import HomePage from "./pages/HomePage.jsx"
 import AuthorsPage from "./pages/AuthorsPage.jsx"
-import PrivacyPage from "./pages/PrivacyPage.jsx"
 
 function ScrollToHash() {
   const location = useLocation()
@@ -43,7 +42,6 @@ export default function App() {
           }
         />
         <Route path="/authors" element={<AuthorsPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </>
   )

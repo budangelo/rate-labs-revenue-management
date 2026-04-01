@@ -454,3 +454,41 @@
     margin-top: 12px;
   }
 }
+
+.footer-links .footer-policy-link,
+.footer-links a.iubenda-embed.footer-policy-link,
+.footer-links a.iubenda-noiframe.footer-policy-link {
+  display: inline-block;
+  width: auto;
+  padding: 0 !important;
+  margin: 0 0 14px 0 !important;
+  color: #acc8a2 !important;
+  font-size: 1.08rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: inherit !important;
+  white-space: normal !important;
+}
+
+.footer-links .footer-policy-link:hover,
+.footer-links a.iubenda-embed.footer-policy-link:hover,
+.footer-links a.iubenda-noiframe.footer-policy-link:hover {
+  color: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+@media (max-width: 576px) {
+  .footer-links .footer-policy-link,
+  .footer-links a.iubenda-embed.footer-policy-link,
+  .footer-links a.iubenda-noiframe.footer-policy-link {
+    font-size: 1rem !important;
+    margin-bottom: 10px !important;
+  }
+}

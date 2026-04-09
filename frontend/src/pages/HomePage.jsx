@@ -139,6 +139,42 @@ export default function HomePage() {
       document.removeEventListener("pointerdown", handlePointerDown)
     }
   }, [isMobileNewsExpanded])
+
+  const processSteps = [
+  {
+    id: "01",
+    tabTitle: "Chiamata conoscitiva",
+    meta: "30 min • senza impegno",
+    description: "Capiamo la tua struttura e gli obiettivi di fatturato.",
+    outcome: "Una valutazione chiara su dove intervenire e cosa aspettarti."
+  },
+  {
+    id: "02",
+    tabTitle: "Analisi e diagnosi",
+    meta: "circa 1 settimana",
+    description: "Tariffe, canali, occupazione, margine reale a confronto.",
+    outcome: "Una fotografia precisa del fatturato che non stai ancora realizzando."
+  },
+  {
+    id: "03",
+    tabTitle: "Strategia su misura",
+    meta: "Documento consegnato",
+    description: "Priorità, leve tariffarie e azioni da avviare subito.",
+    outcome: "Un piano operativo concreto, non una presentazione da mettere in un cassetto."
+  },
+  {
+    id: "04",
+    tabTitle: "Affiancamento mensile",
+    meta: "Opzionale • su base continuativa",
+    description: "",
+    outcome: "Monitoraggio e ottimizzazione continua."
+  }
+]
+
+const [activeProcessIndex, setActiveProcessIndex] = useState(0)
+const activeProcessStep = processSteps[activeProcessIndex]
+
+
   return (
     <>
     {/*----------------------  HERO  ------------------*/}
@@ -237,6 +273,66 @@ export default function HomePage() {
               </article>
             </Col>
           </Row>
+        </Container>
+      </section>
+    {/*----------------------  PROCESS JOURNEY  ------------------*/}
+      <section className="process-journey-section py-5">
+        <Container>
+          <div className="process-journey-header text-center">
+            <h2 className="process-journey-title">
+              Dal primo contatto al revenue ottimizzato
+            </h2>
+            <p className="process-journey-subtitle">
+              Ogni hotel è diverso. Il percorso, no.
+            </p>
+          </div>
+
+          <div className="process-tabs-shell">
+            <div className="process-tabs-scroll">
+              {processSteps.map((step, index) => (
+                <button
+                  key={step.id}
+                  type="button"
+                  className={`process-tab-button ${activeProcessIndex === index ? "is-active" : ""}`}
+                  onClick={() => setActiveProcessIndex(index)}
+                  aria-pressed={activeProcessIndex === index}
+                >
+                  <span className="process-tab-number">{step.id}</span>
+                  <span className="process-tab-label">{step.tabTitle}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div
+  key={activeProcessStep.id}
+  className="process-panel-shell process-panel-animate"
+>
+            <Row className="g-3 align-items-stretch">
+              <Col lg={6}>
+                <article className="process-card process-card-primary h-100">
+                  <span className="process-card-kicker">Step {activeProcessStep.id}</span>
+                  <h3 className="process-card-title">{activeProcessStep.tabTitle}</h3>
+                  <p className="process-card-meta">{activeProcessStep.meta}</p>
+
+                  {activeProcessStep.description && (
+                    <p className="process-card-text mb-0">
+                      {activeProcessStep.description}
+                    </p>
+                  )}
+                </article>
+              </Col>
+
+              <Col lg={6}>
+                <article className="process-card process-card-secondary h-100">
+                  <span className="process-card-kicker">Cosa ottieni</span>
+                  <p className="process-card-text process-card-text-secondary mb-0">
+                    {activeProcessStep.outcome}
+                  </p>
+                </article>
+              </Col>
+            </Row>
+          </div>
         </Container>
       </section>
     {/*----------------------  ABOUT US  ------------------*/}
